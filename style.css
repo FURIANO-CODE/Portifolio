@@ -1,10 +1,25 @@
 @import url('https://fonts.googleapis.com/css2? family = Baloo + Tamma + 2 & family = Comfortaa: wght @ 300 & display = swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script&family=Fredoka+One&display=swap');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.js');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.eot');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/sprites/brands.svg');
+@import url('https://fonts.googleapis.com/css2? family = Mulish: wght @ 200 & display = swap');
 
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --font-primary:"Baloo  Tamma  2";
+    --font-secundary:"Dancing Script";
+    --font-action:"Mulish";
 }
 #container{
     width: 100vw;
@@ -12,7 +27,7 @@
     background-size:cover ;
     background-image:url("imagens/dan.jpg");
     opacity: 1.0;
-    animation: zoom 28s; 
+    animation: zoom 2s; 
     }
     @keyframes zoom{
         0%{
@@ -36,18 +51,18 @@
         left: 10%;
     }
     .banner h1{
-        font-family: "Baloo  Tamma  2";
+        font-family: var(--font-primary);
         color: rgb(252, 252, 252);
         font-size: 2.9rem;
         font-weight: 200;
         text-shadow: .3rem .4rem 2px rgba(0, 0,0, 6);
         line-height: 3.5rem;
-        animation: mover 0.5s ;
+        animation: mover 1s ;
         
     }
        
     .banner p{
-        font-family: "Baloo  Tamma  2";
+        font-family: var(--font-secundary);
 
         color: rgb(255, 255, 255);
         font-size: 2rem;
@@ -59,15 +74,16 @@
     .banner button{
         background: #AA076B;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #790977, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, #61045fc2, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         border: 0px;
         color: rgb(5, 5, 5);
         padding: 1rem 2rem;
         text-transform: uppercase;
-        font-family: "Baloo  Tamma  2";
+        font-family: var(--font-action);
         letter-spacing: .1rem;
         cursor: pointer;
         animation: mover 2s ;
+        transition: color 1.5s;
     }
        
    @keyframes mover{
@@ -79,3 +95,83 @@
         opacity: 1;
     }
 }
+/*Css do menu hamburguer*/
+.hamburguer{
+    width:2rem ;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+/*linhas do hamburguer menu*/
+.line{
+    width: 100%;
+    height:.2rem;
+    background-color: white;
+    box-shadow:0.1rem 0.1rem 1px  #000;
+}
+/*Css do menu lateral*/
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: rgba(184, 184, 169, 0.377);
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: 0.8s;
+    
+}
+.sidebar.show-menu{
+    right: 0;
+}
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-item{
+    text-align: center;
+    margin-bottom: 1rem;
+   
+}
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: rgb(31, 2, 29);
+    transition: color 1.80s;
+}
+.menu-link:hover{
+    color: #ffffff;
+}
+
+.social-media{
+   
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social-media i{
+    background-color:rgb(33, 3, 43) ;
+    color:rgb(255, 255, 255);
+    height: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20;
+    transition: background-color 1s ;
+}
+.social-media i:hover{
+    background-color: #c41d84;
+}
+    
